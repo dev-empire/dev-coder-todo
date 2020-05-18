@@ -9,7 +9,7 @@ export default function Header() {
         padding: '10px',
         textAlign: 'center',
       }}>
-      <h1>DevTodo</h1>
+      <h1>Dev Todo</h1>
     </header>
   )
 }
