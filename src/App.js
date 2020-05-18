@@ -1,16 +1,16 @@
-import React, { Component } from 'react';
-import './App.css';
-import Header from './components/layout/Header';
-import AddTodo from './components/AddTodo';
-import Todos from './components/Todos';
-import uuid from 'react-uuid';
+import React, { Component } from 'react'
+import './App.css'
+import Header from './components/layout/Header'
+import AddTodo from './components/AddTodo'
+import Todos from './components/Todos'
+import uuid from 'react-uuid'
 
 class App extends Component {
   state = {
     todos: [
       {
         id: uuid(),
-        title: 'Take out trash',
+        title: 'Read Novels',
         completed: false,
       },
       {
@@ -24,35 +24,35 @@ class App extends Component {
         completed: false,
       },
     ],
-  };
-  markComplete = (id) => {
+  }
+  markComplete = id => {
     this.setState({
-      todos: this.state.todos.map((todo) => {
+      todos: this.state.todos.map(todo => {
         if (todo.id === id) {
-          todo.completed = !todo.completed;
+          todo.completed = !todo.completed
         }
-        return todo;
+        return todo
       }),
-    });
-  };
-  delTodo = (id) => {
+    })
+  }
+  delTodo = id => {
     this.setState({
-      todos: [...this.state.todos.filter((todo) => todo.id !== id)],
-    });
-  };
-  addTodo = (title) => {
+      todos: [...this.state.todos.filter(todo => todo.id !== id)],
+    })
+  }
+  addTodo = title => {
     const newTodo = {
       id: uuid(),
       title,
       completed: false,
-    };
-    this.setState({ todos: [...this.state.todos, newTodo] });
-  };
+    }
+    this.setState({ todos: [...this.state.todos, newTodo] })
+  }
   render() {
     return (
-      <div className="App">
+      <div className='App'>
         <Header />
-        <div className="container">
+        <div className='container'>
           <AddTodo addTodo={this.addTodo} />
           <Todos
             todos={this.state.todos}
@@ -61,8 +61,8 @@ class App extends Component {
           />
         </div>
       </div>
-    );
+    )
   }
 }
 
-export default App;
+export default App
