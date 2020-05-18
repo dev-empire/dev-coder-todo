@@ -54,6 +54,7 @@ class App extends Component {
     this.setState({ todos: [...this.state.todos, newTodo] })
   }
   render() {
+    // destructin
     return (
       <div className='App'>
         <Header />
