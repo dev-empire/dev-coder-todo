@@ -23,6 +23,11 @@ class App extends Component {
         title: 'Work on side project',
         completed: false,
       },
+      {
+        id: uuid(),
+        title: 'Surf the web',
+        completed: false,
+      },
     ],
   }
   markComplete = id => {
